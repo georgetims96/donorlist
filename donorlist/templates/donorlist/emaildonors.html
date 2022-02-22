@@ -1,0 +1,23 @@
+{% extends "donorlist/base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <form method="POST">
+        {% csrf_token %}
+        <legend class="border-bottom mb-4">Send a Personalized Message!</legend>
+        <div class="form-group">
+            <label for="email_body">Let donors know a little bit more about your situation</label>
+        </div>
+        <div class="form-group">
+            <textarea name="mail_body" class="form-control" required id="id_mail_body" cols="50"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+    
+</div>
+<div class="row justify-content-center mt-5">
+    {% if status_message %}
+        <b>{{ status_message }}</b>
+    {% endif %}
+</div>
+{% endblock %}

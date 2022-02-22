@@ -1,0 +1,35 @@
+{% extends "donorlist/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+ <h2 class="mt-5"> About Donorlist</h2>
+ <hr>
+ <p>In light of the COVID pandemic, hospitals are experiencing unforseen shortages of blood supply, and bloodbanks such as the Red Cross have not been able to keep up with demand. Donorlist seeks to solve this problem by mobilizing everyday people to replenish blood blood banks with its Peer-To-Peer model. At the moment, we are proving our concept within the UPenn community. If you would like to donate, or request a donation, register today!</p>
+
+<h2 class="mt-5">Our Team</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+      <img src="{% static "donorlist/gtheadshot_donorlist.jpg" %}" class="img-fluid mb-2">
+    <h3 class="text-center">George Tims</h3>
+    <p class="text-center">MCIT Candidate @ UPenn</p>
+  </div>
+
+  <div class="col">
+      <img src="{% static "donorlist/rsheadshot_donorlist.png" %}" class="img-fluid mb-2">
+    <h3 class="text-center">Rushabh Shah</h3>
+    <p class="text-center">MCIT Candidate @ UPenn</p>
+  </div>
+
+  <div class="col">
+      <img src="{% static "donorlist/arvind2.jpeg" %}" class="img-fluid mb-2">
+    <h3 class="text-center">Arvind Bhusnurmath</h3>
+    <p class="text-center">Senior Advisor</p>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "donorlist/base.html" %}
+
+{% block content %}
+{% if donors|length == 0%}
+<center>Sorry - we don't have any compatible donors in your area &#128542 </center>
+{% else %}
+<div class="row justify-content-center mt-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Donor</th>
+                <th>Birthday</th>
+                <th>City</th>
+                <th>Blood Type</th>
+                <th>Email Address</th>
+                <th>Distance</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+
+            <tr>
+                <td colspan = "1"></td>
+                <td colspan = "1"></td>
+                <td colspan = "1"></td>
+                <td colspan = "1"></td>
+                <td colspan = "1"></td>
+                <td colspan = "1"></td>
+            </tr>
+
+        </tfoot>
+
+        <tbody>
+
+            {% for donor in donors %}
+                <tr>
+                    <td> {{donor.first_name}}</td>
+                    <td> {{donor.birth_date}}</td>
+                    <td> {{donor.city}}</td>
+                    <td> {{donor.blood_type}}</td>
+                    <td> {{donor.email_address}}</td>
+                    <td> {{ donor.distance }} Miles Away</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" id='email_button'>Request donation!</button>
+    <script>
+        const email_button = document.getElementById('email_button');
+        email_button.addEventListener('click', (e) => {
+            window.location.href = '{% url 'emaildonors' %}';
+        });
+    </script>
+  </div>
+  {% endif %}
+
+{% endblock %}
